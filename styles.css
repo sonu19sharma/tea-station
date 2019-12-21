@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --slantedText:'Grand Hotel', cursive;
+    --mainColor:#698f3f;
+    --secondryColor:rgb(73, 13, 13);
+    --maindark:black;
+    --mainWite:white;
+    --mainGrey:rgb(202, 191, 191);
+    --mainTransaition:all 0.3s ease-in-out;
+    --letterSpacing:0.5rem;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Catamaran', sans-serif;
+}
+.header{
+    min-height: 100vh;
+    background:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,0.5)), url('./images/main_bcg.jpg') center/cover;
+}
+.banner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    letter-spacing: var(--letterSpacing) ;
+}
+.banner-subtitle{
+    font-size: 2rem;
+    font-family: var(--slantedText);
+    color:var(--mainColor);
+    animation: slideright 3s ease-in-out;
+}
+.banner-title{
+    font-size: 3rem;
+    color: var(--mainWite);
+    text-transform: uppercase;
+    margin-top: 2.5rem;
+    line-height: 1.3;
+    animation: slideleft 3s ease-in-out;
+}
+.main-btn,.banner-btn{
+    margin: 2.5rem 0;
+    display: inline-block;
+    background: var(--mainColor);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    color: var(--maindark);
+    outline: 0.2rem solid var(--mainColor);
+    outline-offset: 0.2rem;
+    transition: var(--mainTransaition);
+}
+.banner-btn:hover{
+     color: var(--mainWite);
+     opacity: 0.7;
+}
+.banner-btn{
+    padding: 1.2rem,1.5rem;
+    animation: show 1s ease-in-out;
+}
+.skills{
+    display:inline;
+    transition: var(--mainTransaition);
+}
+.skill{
+    padding: 2.5rem 0rem;
+    background:var(--mainGrey);
+    text-align: center;
+}
+.skill-icon{
+    font-size: 2.5rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: var(--mainTransaition);
+}
+.skill-title{
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: var(--mainColor);
+    margin-bottom: 1.5rem;
+    transition: var(--mainTransaition);
+}
+.skill-text{
+    max-width: 13rem;
+    margin: auto;
+}
+@media screen and (min-width : 576px){
+    .skill{
+        float: left;
+        width: 50%;
+    }
+}
+@media screen and (min-width : 1200px){
+    .skill{
+        float: left;
+        width: 25%;
+    }
+}
+.skill:hover{
+    background-color:var(--mainColor);
+}
+.skill:hover .skill-title{
+    color: var(--mainWite);
+}
+.skill:hover .skill-icon{
+    transform: translateY(-5px);
+}
+@keyframes show{
+    0%{
+        transform: scale(2);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes slideright{
+    0%{
+        transform: translateX(1000px);
+    }
+    50%{
+        transform: translateX(-200px);
+    }
+    75%{
+        transform: translateX(50px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+
+}
+@keyframes slideleft{
+    0%{
+        transform: translateX(-1000px);
+    }
+    50%{
+        transform: translateX(200px);
+    }
+    75%{
+        transform: translateX(-50px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+
+}
+.about{
+    margin: 2.5rem;
+    display: inline-block;
+}
+.about-image-container{
+   /* padding: 2rem 0; */
+   /* display: inline-block; */
+   width: 70vw;
+   margin: 0 auto;
+   overflow: hidden;
+   border: 0.5rem solid var(--mainColor);
+   border-radius: 1rem;
+}
+.image-source{
+  width: 100%;
+  display: block;
+  transition: var(--mainTransaition);
+  
+} 
+.about-info-container{
+    margin: 0 auto;
+    width: 100%;
+    padding: 2.5rem 0;
+}
+.about-info-container > h3{
+    font-family: var(--slantedText);
+    font-size: 2.5rem;
+    letter-spacing: var(--letterSpacing);
+    color: var(--mainColor);
+}
+.about-info-container > h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.about-image-container:hover .image-source{
+    transform: scale(1.5);
+}
+@media screen and (min-width: 800px){
+    .about-image-container,
+    .about-info-container
+    {
+        float: left;
+        width: 40%;
+        /* padding: 2rem; */
+        margin: 2rem;
+    }
+    /* .about-info-container{
+        float: right;
+        width: 50%;
+        padding: 2rem;
+        margin: 2rem;
+    } */
+    
+}
+/* product css start */
+.products{
+    background: rgb(80, 75, 75) center/cover;
+    padding: 2.5rem;
+    display: inline-block;
+    
+}
+.product-desc h3{
+    font-family: var(--slantedText);
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    color: var(--mainColor);
+}
+.product-desc h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.product{
+    width: 80vw;
+    /* margin: 1rem; */
+}
+.product-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+.product-title{
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--mainWite);
+    letter-spacing: var(--letterSpacing);
+    width: 20vw;
+}
+.product-price{
+    font-size: 0.8rem;
+    color: var(--mainColor);
+    /* margin-bottom: 1rem; */
+    letter-spacing: var(--letterSpacing);
+}
+@media screen and (min-width :800px){
+    .product,
+    .product-desc{
+        float: left;
+        width: 25%;
+        padding: 0 1.5rem;
+    }
+}
+/* product css end */
+/* contact css start */
+.contact-details{
+    padding: 2.5rem;
+    height: 100vh;
+    /* width: 100vw; */
+    /* border: 0.4rem solid var(--mainColor); */
+    position: relative;
+}
+.address,.email,.telephone,.send-message{
+    margin: 1.5rem 0;
+    /* height: 30%; */
+    /* width: 100%; */
+}
+.address-header,.email-header,.telephone-header{
+    font-family: var(--slantedText);
+    text-transform: uppercase;
+    color: var(--mainColor);
+    letter-spacing: var(--letterSpacing);
+}
+.message-text{
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-bottom: 0.15rem solid var(--mainColor);
+    padding: 1rem 0;
+    
+}
+.send-message{
+    /* border: 0.25rem solid var(--mainColor); */
+}
+
+.contact-detail{
+    /* display: block; */
+    /* position: absolute; */
+}
+@media screen and (min-width : 700px){
+    .contact-detail,.send-message{
+        float: left;
+        width: 50%;
+        /* border: 0.25rem solid var(--mainColor); */
+        padding: 0 2.5rem;
+    }
+    .contact-detail{
+        /* padding: 2.5rem;  */
+    }
+    .contact-details{
+        height: 60vh;
+        /* padding: 0 2.5rem; */
+    }
+}
+/*contact css end  */
+.footers{
+    margin: auto;
+    padding: 2rem 0;
+    background: grey center/cover;
+    height: 18vh;
+    /* border: 0.03rem solid var(--mainColor); */
+    text-align: center;
+}
+.footers p{
+    letter-spacing: var(--letterSpacing); 
+}
